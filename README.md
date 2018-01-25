@@ -1,3 +1,3 @@
 # FWWU-com
 firewalkwithus.com(2018)
-A revamp of the first comingsoon-template (under construction).
+The first comingsoon-template transformed into a fully functional landing page for Fire Walk With Us, utilizing Bootstrap 4 with Gulp and Sass (under construction). 
