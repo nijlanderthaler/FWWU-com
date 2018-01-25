@@ -1,0 +1,145 @@
+body,
+html {
+  background: #000;
+  font-family: "Courier New", Courier, monospace; }
+
+h1,
+h3,
+h4,
+p {
+  opacity: 0.7;
+  text-shadow: 1px 0 8px 0 rgba(150, 150, 150, 0.7); }
+
+.opacity-text {
+  opacity: 0.7; }
+
+.header-fixed {
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease; }
+
+.header-fixed.transparent {
+  background-color: rgba(0, 0, 0, 0.3); }
+
+.headroom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.4s ease-in-out; }
+
+.headroom--unpinned {
+  top: -122px; }
+
+.headroom--pinned {
+  top: 0; }
+
+.logo {
+  margin-bottom: 0; }
+
+.jumbo-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%); }
+
+#demo {
+  position: relative;
+  top: 20px; }
+
+.move {
+  position: absolute;
+  top: %;
+  /* need to override bootstrap */
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-animation: move 2.5s, fade-in 2.5s;
+  animation: move 2.5s, fade-in 2.5s;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
+
+@keyframes move {
+  from {
+    transform: translateX(-150%); }
+  to {
+    transform: translateX(-50%); } }
+
+@-webkit-keyframes move {
+  from {
+    transform: translateX(-150%); }
+  to {
+    transform: translateX(-50%); } }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.news-gradient {
+  background: linear-gradient(#192119, rgba(25, 33, 25, 0)); }
+
+.news-section {
+  background: #fff;
+  margin-bottom: 5rem; }
+
+button.btn.collapsed::before {
+  content: 'More news'; }
+
+button.btn::before {
+  content: 'Minimize news'; }
+
+.bg-discography {
+  background: #fff; }
+
+.card {
+  border: none; }
+
+.shows-section {
+  width: 100%;
+  height: 700px;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: scroll; }
+
+.nav-font {
+  font-size: 1.8rem; }
+
+.bg-contact {
+  background: #1a1b1c; }
+
+.card-header {
+  border-bottom: none; }
+
+.jumbotron {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/fwwu-forest2.jpg");
+  height: 100vh;
+  margin-bottom: 0; }
+
+.shows {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/vondelbunker-live.jpg");
+  padding: 0; }
+
+@media screen and (max-width: 768px) {
+  .headroom--unpinned {
+    top: -322px; } }
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .jumbotron {
+    background-image: url("../assets/fwwu-forestalbumcover2.jpg"); } }
+
+@media screen and (max-width: 576px) {
+  .nav-font {
+    margin: 0 0.5rem; } }
