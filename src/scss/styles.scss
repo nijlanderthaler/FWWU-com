@@ -1,20 +1,10 @@
-// Variables
-$bg-color: #000;
-$bg-alt: #fff;
-
-// Mixins
-@mixin hero-images {
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+@import "variables";
+@import "mixins";
 
 // General styles
 
 body,
 html {
-  // background: #1a1b1d;
   background: $bg-color;
   font-family: "Courier New", Courier, monospace;
 }
@@ -24,7 +14,7 @@ h3,
 h4,
 p {
   opacity: 0.7;
-  text-shadow: 1px 0 8px 0 rgba(150, 150, 150, 0.7);// does it work?
+  text-shadow: 1px 0 6px rgba(150, 150, 150, 0.5);
 }
 
 .opacity-text {
@@ -52,6 +42,9 @@ p {
 
 .headroom--unpinned {
   top: -122px;
+  @include mQ(768px) {
+    top: -322px;
+  }
 }
 
 .headroom--pinned {
@@ -60,15 +53,53 @@ p {
 
 .logo {
   margin-bottom: 0;
+  @include mQ(3000px, 1300px) {
+    font-size: 3rem;
+  } // for targeting lg screens, needs work perhaps
+  @include mQ(992px) {
+    font-size: 2.2rem;
+  }
+  @include mQ(768px) {
+    font-size: 2rem;
+  }
+  @include mQ(576px) {
+    font-size: 1.75rem;
+  }
 }
 
 // jumbotron styles
+
+.jumbotron {
+  @include heroImages;
+  background-image: url("../assets/fwwu-forest2.jpg");
+  height: 100vh;
+  margin-bottom: 0;
+  @include mQPortrait(768px) {
+    background-image: url("../assets/fwwu-forestalbumcover2.jpg");
+  }
+}
 
 .jumbo-text {
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
+  h3 {
+    @include mQ(992px) {
+      font-size: 1.4rem;
+    }
+    @include mQ(768px) {
+      font-size: 1.25rem;
+    }
+  }
+  p {
+    @include mQ(992px) {
+      font-size: 0.9rem;
+    }
+    @include mQ(768px) {
+      font-size: 0.8rem;
+    }
+  }
 }
 
 #demo {
@@ -78,15 +109,28 @@ p {
 
 .move {
   position: absolute;
-  top: %; /* need to override bootstrap */
   left: 50%;
   transform: translateX(-50%);
-  //background-color: rgba(0, 0, 0, 0.3);
-  //padding: 1rem; optioneel....
+  margin-top: 10rem;
   -webkit-animation: move 2.5s, fade-in 2.5s;
   animation: move 2.5s, fade-in 2.5s;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+  @include mQ(3000px, 1300px) {
+    margin-top: 18rem;
+  }
+  @include mQ(992px) {
+    margin-top: rem;// necessary?
+  }
+  @include mQ(768px) {
+    margin-top: 16rem;
+  }
+  @include mQ(576px) {
+    margin-top: 5rem;
+  }
+  @include mQLandscape(992px) {
+    margin-top: 0;
+  }// special rules for iPhoneX necessary?
 }
 
 @keyframes move {
@@ -146,12 +190,22 @@ button.btn::before {
   content: 'Minimize news';
 }
 
+// Discography styles
+
 .bg-discography {
   background: $bg-alt;
 }
 
 .card {
   border: none;
+}
+
+// Shows stylesheet
+
+.shows {
+  @include heroImages;
+  background-image: url("../assets/vondelbunker-live.jpg");
+  padding: 0;
 }
 
 .shows-section {
@@ -163,43 +217,15 @@ button.btn::before {
 
 .nav-font {
   font-size: 1.8rem;
+  @include mQ(576px) {
+    margin: 0 0.5rem;
+  }
 }
 
 .bg-contact {
-  background: #1a1b1c;
+  background: complement($test-color);
 }
 
 .card-header {
   border-bottom: none;
-}
-
-.jumbotron {
-  @include hero-images;
-  background-image: url("../assets/fwwu-forest2.jpg");
-  height: 100vh;
-  margin-bottom: 0;
-}
-
-.shows {
-  @include hero-images;
-  background-image: url("../assets/vondelbunker-live.jpg");
-  padding: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .headroom--unpinned {
-    top: -322px;
-  }
-}
-
-@media only screen and (max-width: 768px) and (orientation: portrait) {
-  .jumbotron {
-    background-image: url("../assets/fwwu-forestalbumcover2.jpg");
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .nav-font {
-    margin: 0 0.5rem;
-  }
 }

@@ -8,7 +8,7 @@ h3,
 h4,
 p {
   opacity: 0.7;
-  text-shadow: 1px 0 8px 0 rgba(150, 150, 150, 0.7); }
+  text-shadow: 1px 0 6px rgba(150, 150, 150, 0.5); }
 
 .opacity-text {
   opacity: 0.7; }
@@ -29,18 +29,57 @@ p {
 
 .headroom--unpinned {
   top: -122px; }
+  @media screen and (max-width: 768px) {
+    .headroom--unpinned {
+      top: -322px; } }
 
 .headroom--pinned {
   top: 0; }
 
 .logo {
   margin-bottom: 0; }
+  @media screen and (max-width: 3000px) and (min-width: 1300px) {
+    .logo {
+      font-size: 3rem; } }
+  @media screen and (max-width: 992px) {
+    .logo {
+      font-size: 2.2rem; } }
+  @media screen and (max-width: 768px) {
+    .logo {
+      font-size: 2rem; } }
+  @media screen and (max-width: 576px) {
+    .logo {
+      font-size: 1.75rem; } }
+
+.jumbotron {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/fwwu-forest2.jpg");
+  height: 100vh;
+  margin-bottom: 0; }
+  @media screen and (max-width: 768px) and (orientation: portrait) {
+    .jumbotron {
+      background-image: url("../assets/fwwu-forestalbumcover2.jpg"); } }
 
 .jumbo-text {
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translateX(-50%); }
+  @media screen and (max-width: 992px) {
+    .jumbo-text h3 {
+      font-size: 1.4rem; } }
+  @media screen and (max-width: 768px) {
+    .jumbo-text h3 {
+      font-size: 1.25rem; } }
+  @media screen and (max-width: 992px) {
+    .jumbo-text p {
+      font-size: 0.9rem; } }
+  @media screen and (max-width: 768px) {
+    .jumbo-text p {
+      font-size: 0.8rem; } }
 
 #demo {
   position: relative;
@@ -48,14 +87,28 @@ p {
 
 .move {
   position: absolute;
-  top: %;
-  /* need to override bootstrap */
   left: 50%;
   transform: translateX(-50%);
+  margin-top: 10rem;
   -webkit-animation: move 2.5s, fade-in 2.5s;
   animation: move 2.5s, fade-in 2.5s;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out; }
+  @media screen and (max-width: 3000px) and (min-width: 1300px) {
+    .move {
+      margin-top: 18rem; } }
+  @media screen and (max-width: 992px) {
+    .move {
+      margin-top: rem; } }
+  @media screen and (max-width: 768px) {
+    .move {
+      margin-top: 16rem; } }
+  @media screen and (max-width: 576px) {
+    .move {
+      margin-top: 5rem; } }
+  @media screen and (max-width: 992px) and (orientation: landscape) {
+    .move {
+      margin-top: 0; } }
 
 @keyframes move {
   from {
@@ -100,30 +153,6 @@ button.btn::before {
 .card {
   border: none; }
 
-.shows-section {
-  width: 100%;
-  height: 700px;
-  background-color: rgba(0, 0, 0, 0.8);
-  overflow-y: scroll; }
-
-.nav-font {
-  font-size: 1.8rem; }
-
-.bg-contact {
-  background: #1a1b1c; }
-
-.card-header {
-  border-bottom: none; }
-
-.jumbotron {
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../assets/fwwu-forest2.jpg");
-  height: 100vh;
-  margin-bottom: 0; }
-
 .shows {
   position: relative;
   background-position: center;
@@ -132,14 +161,20 @@ button.btn::before {
   background-image: url("../assets/vondelbunker-live.jpg");
   padding: 0; }
 
-@media screen and (max-width: 768px) {
-  .headroom--unpinned {
-    top: -322px; } }
+.shows-section {
+  width: 100%;
+  height: 700px;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: scroll; }
 
-@media only screen and (max-width: 768px) and (orientation: portrait) {
-  .jumbotron {
-    background-image: url("../assets/fwwu-forestalbumcover2.jpg"); } }
+.nav-font {
+  font-size: 1.8rem; }
+  @media screen and (max-width: 576px) {
+    .nav-font {
+      margin: 0 0.5rem; } }
 
-@media screen and (max-width: 576px) {
-  .nav-font {
-    margin: 0 0.5rem; } }
+.bg-contact {
+  background: #211921; }
+
+.card-header {
+  border-bottom: none; }

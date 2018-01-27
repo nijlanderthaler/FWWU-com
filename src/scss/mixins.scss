@@ -1,0 +1,32 @@
+// Mixins
+@mixin heroImages {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin mQ($arg...) {
+  @if length($arg) == 1 {
+    @media screen and (max-width: nth($arg, 1)) {
+      @content;
+    }
+  }
+  @if length($arg) == 2 {
+    @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)) {
+      @content;
+    }
+  }
+}
+
+@mixin mQPortrait($arg) {
+  @media screen and (max-width: $arg) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mQLandscape($arg) {
+  @media screen and (max-width: $arg) and (orientation: landscape) {
+    @content;
+  }
+}
