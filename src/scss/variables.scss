@@ -1,5 +1,28 @@
 // Variables
-$bg-color: #000;
-$bg-alt: #fff;
 
+// Bootstrap variable overrides
+
+$body-bg: #000;
+$font-family-monospace: "Courier New", Courier, monospace;
+
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 4.5), // additional spacing option
+  7: ($spacer * 8) // additional spacing option
+), $spacers);
+
+// Bootstrap Sass files
+@import "node_modules/bootstrap/scss/bootstrap";
+// includes everything, for custom adjustments: see documentation
+
+// Custom variables
+
+$bg-alt: #fff;
 $test-color: rgba(25, 33, 25, 1);

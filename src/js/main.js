@@ -1,3 +1,5 @@
+// Custom jQuery
+
 // headroom.js
 $(".fixed-top").headroom({
   "offset": 525,
@@ -11,4 +13,19 @@ $(window).scroll(function() {
   } else {
     $('.header-fixed').removeClass('transparent');
   }
+});
+
+// hide jumbo-text
+$("#hide").click(function(){
+    $(".disappear").hide();
+});
+
+// make disappear appear again
+$(".close").click(function(){
+    $(".disappear").show();
+});
+
+// toggle disappear onclick to make room for collapsibleNavbar
+$("#toggle-jumbo-text").click(function(){
+    $(".disappear").toggle();
 });
