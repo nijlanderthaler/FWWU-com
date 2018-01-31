@@ -1,4 +1,4 @@
-// Custom variables, mixins
+// Custom variables and mixins
 @import "variables";
 @import "mixins";
 
@@ -11,7 +11,7 @@ html {
 
 h1,
 h3,
-h4,
+h5,
 p {
   opacity: 0.7;
   text-shadow: 1px 0 6px rgba(150, 150, 150, 0.5);
@@ -21,7 +21,7 @@ p {
   opacity: 0.7;
 }
 
-// header nav styles
+// Header nav styles
 
 .header-fixed {
   -webkit-transition: all 0.8s ease;
@@ -67,7 +67,7 @@ p {
   }
 }
 
-// jumbotron styles
+// Jumbotron styles
 
 .jumbotron {
   @include heroImages;
@@ -123,31 +123,28 @@ p {
 
 .modal-content {
   background-color: rgba(106, 117, 106, 0.1);
-}
-
-.modal-header {
-  position: relative;
-  border: none;
-  padding-bottom: 0;
-}
-
-.modal-body {
-  padding-top: 0.5rem;
-}
-
-.close {
-  text-shadow: none;
+  .modal-header {
+    position: relative;
+    border: none;
+    padding-bottom: 0;
+  }
+  .modal-body {
+    padding: 0 1.5rem 0.5rem;
+  }
+  .close {
+    text-shadow: none;
+  }
 }
 
 // News section
 
 .news-gradient {
-  background: linear-gradient(rgba(25, 33, 25, 1), rgba(25, 33, 25, 0));
+  //background: linear-gradient(rgba(25, 33, 25, 1), rgba(25, 33, 25, 0));
+  background: $body-bg;
 }
 
 .news-section {
-  background: $bg-alt;
-  margin-bottom: 5rem;
+  background: $alt-bg;
 }
 
 button.expand.collapsed::before {
@@ -161,11 +158,15 @@ button.expand::before {
 // Discography styles
 
 .bg-discography {
-  background: $bg-alt;
+  background: $alt-bg;
 }
 
 .card {
   border: none;
+  .card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 
 // Shows stylesheet
@@ -183,6 +184,8 @@ button.expand::before {
   overflow-y: scroll;
 }
 
+// Contact section
+
 .nav-font {
   font-size: 1.8rem;
   @include mQ(576px) {
@@ -191,9 +194,27 @@ button.expand::before {
 }
 
 .bg-contact {
-  background: complement($test-color);
+  background: $alt-bg;
 }
 
-.card-header {
-  border-bottom: none;
+.members {
+  margin-bottom: 0.5rem;
+}
+
+.members-heading {
+  margin-bottom: 1rem;
+  @include mQLandscape (740px) {
+    margin-top: 1.5rem;
+  };
+  @include mQ(576px) {
+    margin-top: 1.5rem;
+  }
+}
+
+nav.copy {
+  background: $alt-bg;
+  border-top: 1px solid rgba(106, 117, 106, 0.1);
+  p {
+    font-size: 0.8rem;
+  }
 }

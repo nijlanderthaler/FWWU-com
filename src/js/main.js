@@ -29,3 +29,9 @@ $(".close").click(function(){
 $("#toggle-jumbo-text").click(function(){
     $(".disappear").toggle();
 });
+
+// fitvids.js
+$(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $("#teaser").fitVids();
+});

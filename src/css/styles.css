@@ -6332,7 +6332,7 @@ html {
 
 h1,
 h3,
-h4,
+h5,
 p {
   opacity: 0.7;
   text-shadow: 1px 0 6px rgba(150, 150, 150, 0.5); }
@@ -6427,24 +6427,20 @@ p {
 
 .modal-content {
   background-color: rgba(106, 117, 106, 0.1); }
-
-.modal-header {
-  position: relative;
-  border: none;
-  padding-bottom: 0; }
-
-.modal-body {
-  padding-top: 0.5rem; }
-
-.close {
-  text-shadow: none; }
+  .modal-content .modal-header {
+    position: relative;
+    border: none;
+    padding-bottom: 0; }
+  .modal-content .modal-body {
+    padding: 0 1.5rem 0.5rem; }
+  .modal-content .close {
+    text-shadow: none; }
 
 .news-gradient {
-  background: linear-gradient(#192119, rgba(25, 33, 25, 0)); }
+  background: #000; }
 
 .news-section {
-  background: #fff;
-  margin-bottom: 5rem; }
+  background: #fff; }
 
 button.expand.collapsed::before {
   content: 'More news'; }
@@ -6457,6 +6453,9 @@ button.expand::before {
 
 .card {
   border: none; }
+  .card .card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
 
 .shows {
   position: relative;
@@ -6479,7 +6478,22 @@ button.expand::before {
       margin: 0 0.5rem; } }
 
 .bg-contact {
-  background: #211921; }
+  background: #fff; }
 
-.card-header {
-  border-bottom: none; }
+.members {
+  margin-bottom: 0.5rem; }
+
+.members-heading {
+  margin-bottom: 1rem; }
+  @media screen and (max-width: 740px) and (orientation: landscape) {
+    .members-heading {
+      margin-top: 1.5rem; } }
+  @media screen and (max-width: 576px) {
+    .members-heading {
+      margin-top: 1.5rem; } }
+
+nav.copy {
+  background: #fff;
+  border-top: 1px solid rgba(106, 117, 106, 0.1); }
+  nav.copy p {
+    font-size: 0.8rem; }
