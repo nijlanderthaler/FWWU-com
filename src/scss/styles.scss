@@ -6,26 +6,51 @@
 
 body,
 html {
+  position: relative;
   font-family: $font-family-monospace;
-}
-
-h1,
-h3,
-h5,
-p {
-  opacity: 0.7;
-  text-shadow: 1px 0 6px rgba(150, 150, 150, 0.5);
-}
-
-.opacity-text {
-  opacity: 0.7;
+  h1,
+  h3,
+  h5,
+  p {
+    opacity: 0.7;
+    text-shadow: 1px 0 6px rgba(150, 150, 150, 0.5);
+  }
+  p {
+    @include mQ(992px) {
+      font-size: $font-size-p-lg;
+    }
+    @include mQ(768px) {
+      font-size: $font-size-p-md;
+    }
+  }
+  .btn {
+    @include mQ(768px) {
+      font-size: 0.65rem;
+    }
+  }
+  .opacity-text {
+    opacity: 0.7;
+  }
 }
 
 // Header nav styles
 
 .header-fixed {
+  padding: 0.3rem 1rem;
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
+  .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .nav-link.active {
+    color: $alt-bg !important;
+  }
+  @include mQ(576px) {
+    font-size: $font-size-p-md;
+  }
+  @include mQLandscape(740px) {
+    font-size: 0.8rem;
+  }
 }
 
 .header-fixed.transparent {
@@ -41,9 +66,9 @@ p {
 }
 
 .headroom--unpinned {
-  top: -122px;
+  top: -105px; // adjust according to nav height and/or padding
   @include mQ(768px) {
-    top: -322px;
+    top: -268px;
   }
 }
 
@@ -60,11 +85,18 @@ p {
     font-size: 2.2rem;
   }
   @include mQ(768px) {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
   @include mQ(576px) {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
+  @include mQLandscape(768px) {
+    font-size: 1.8rem;
+  }
+}
+
+.custom-toggler {
+  border-color: transparent !important;
 }
 
 // Jumbotron styles
@@ -77,14 +109,11 @@ p {
   @include mQPortrait(768px) {
     background-image: url("../assets/fwwu-forestalbumcover2.jpg");
   }
-
-  .btn-sm {
-    font-size: 0.75rem;
-  }
 }
 
 .disappear {
   position: absolute;
+  z-index: 9999; // makes disappear clickable when nav has transparency
   top: 28%;
   left: 45%;
   transform: translateX(-50%);
@@ -104,18 +133,18 @@ p {
 .jumbo-text {
   h3 {
     @include mQ(992px) {
-      font-size: 1.35rem;
+      font-size: 1.4rem;
     }
     @include mQ(768px) {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
+    }
+    @include mQLandscape(768px){
+      font-size: 1.1rem;
     }
   }
 
   p {
-    @include mQ(992px) {
-      font-size: 0.9rem;
-    }
-    @include mQ(768px) {
+    @include mQLandscape(768px) {
       font-size: 0.8rem;
     }
   }
@@ -124,12 +153,11 @@ p {
 .modal-content {
   background-color: rgba(106, 117, 106, 0.1);
   .modal-header {
-    position: relative;
     border: none;
     padding-bottom: 0;
   }
   .modal-body {
-    padding: 0 1.5rem 0.5rem;
+    padding: 0.2rem 1.5rem 0.5rem;
   }
   .close {
     text-shadow: none;
@@ -138,20 +166,36 @@ p {
 
 // News section
 
-.news-gradient {
-  //background: linear-gradient(rgba(25, 33, 25, 1), rgba(25, 33, 25, 0));
-  background: $body-bg;
-}
-
 .news-section {
   background: $alt-bg;
+  .card-body {
+    padding: 1.25rem 0;
+  }
+  .expand-news,
+  .expand-article {
+    text-shadow: 1px 0 6px rgba(150, 150, 150, 0.5);
+  }
+  .article-hide-1,
+  .article-hide-2 {
+    display: none;
+  }
+  h5 {
+    @include mQLandscape(768px) {
+      font-size: 0.9rem;
+    }
+  }
+  p {
+    @include mQLandscape(768px) {
+      font-size: 0.8rem;
+    }
+  }
 }
 
-button.expand.collapsed::before {
+button.expand-news.collapsed::before {
   content: 'More news';
 }
 
-button.expand::before {
+button.expand-news::before {
   content: 'Minimize news';
 }
 
@@ -167,13 +211,18 @@ button.expand::before {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
+  p {
+    @include mQLandscape(768px) {
+      font-size: 0.8rem;
+    }
+  }
 }
 
 // Shows stylesheet
 
 .shows {
   @include heroImages;
-  background-image: url("../assets/vondelbunker-live.jpg");
+  background-image: url("../assets/vondelbunker-live2.jpg");
   padding: 0;
 }
 
@@ -182,12 +231,22 @@ button.expand::before {
   height: 700px;
   background-color: rgba(0, 0, 0, 0.8);
   overflow-y: scroll;
+  h5 {
+    @include mQLandscape(768px) {
+      font-size: 0.9rem;
+    }
+  }
+  p {
+    @include mQLandscape(768px) {
+      font-size: 0.8rem;
+    }
+  }
 }
 
 // Contact section
 
 .nav-font {
-  font-size: 1.8rem;
+  font-size: 1.85rem;
   @include mQ(576px) {
     margin: 0 0.5rem;
   }
@@ -205,9 +264,19 @@ button.expand::before {
   margin-bottom: 1rem;
   @include mQLandscape (740px) {
     margin-top: 1.5rem;
-  };
+  }
   @include mQ(576px) {
     margin-top: 1.5rem;
+  }
+  h5 {
+    @include mQLandscape(768px) {
+      font-size: 0.9rem;
+    }
+  }
+  p {
+    @include mQLandscape(768px) {
+      font-size: 0.8rem;
+    }
   }
 }
 
@@ -215,6 +284,6 @@ nav.copy {
   background: $alt-bg;
   border-top: 1px solid rgba(106, 117, 106, 0.1);
   p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 }

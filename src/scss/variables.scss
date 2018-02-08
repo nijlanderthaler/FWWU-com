@@ -4,6 +4,7 @@
 
 $body-bg: #000;
 $font-family-monospace: "Courier New", Courier, monospace;
+$font-size-base: 0.9rem;
 
 $spacer: 1rem;
 $spacers: ();
@@ -25,4 +26,5 @@ $spacers: map-merge((
 // Custom variables
 
 $alt-bg: #fff;
-$test-color: rgba(25, 33, 25, 1);
+$font-size-p-lg: 0.95rem;
+$font-size-p-md: 0.85rem;

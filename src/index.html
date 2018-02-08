@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en"><!-- no-js is a Modernizr class .......alt-tags???? -->
     <head>
         <meta charset="UTF-8">
         <title>FWWU-com</title>
@@ -7,21 +7,20 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="shortcut icon" href="#"> <!-- remove, fails to load icon, investigate later -->
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/bootstrap.css">
         <link rel="stylesheet" href="/css/styles.css">
     </head>
 
-
-    <body id="home" data-spy="scroll" data-target=".navbar" data-offset="75">
-        <!-- navigation fixed -->
+    <body id="home">
+        <!-- navigation fixed top animated nav scroll-->
         <nav class="navbar header-fixed navbar-expand-md navbar-dark fixed-top">
           <a class="navbar-brand" href="#">
             <h1 class="logo">Fire Walk <br> With Us</h1>
           </a>
 
-          <button id="toggle-jumbo-text" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <button id="toggle-jumbo-text" class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -47,19 +46,20 @@
         </nav>
 
 
-      <!-- jumbotron with bg-image and animated fixed top nav scroll-->
+      <!-- jumbotron with bg-image -->
       <div class="jumbotron jumbotron-fluid text-center">
           <div class="container jumbo-text text-white">
             <div class="disappear">
               <h3 class="text-center opacity-text">New Album</h3>
               <p class="text-center opacity-text">Coming soon
-                <button id="hide" type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#exampleModalCenter">»</button>
+                <!-- modal trigger button -->
+                <button id="hide" type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#myModal" data-backdrop="static">»</button>
               </p>
             </div>
 
 
           <!-- Modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -98,7 +98,7 @@
                 <h5 class="mb-4">Album teaser released
                   <small>Listen now</small>
                 </h5>
-                <div id="teaser" class="card mb-4">
+                <div id="video" class="card mb-4">
                   <iframe width="400" height="225" src="https://www.youtube.com/embed/B9xpamjFnMA" frameborder="0" allowfullscreen alt="Card video YouTube"></iframe>
                   <div class="card-body">
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
@@ -111,46 +111,73 @@
 
                 <!-- news expand -->
                 <div id="demo2" class="pt-4 collapse">
+
                   <h5 class="mb-4">Breaking news!
                     <small>New record on the way/new bass player</small>
                   </h5>
                   <div class="card mb-4">
                     <img class="card-img-top" src="/assets/studio.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <p class="card-text">It’s been a while since our last update,
-                        quite a while we might add. Late 2014 we recorded an album
-                        we were very excited about, but then disaster struck. Early
-                        2015 our practice space burnt down and basically all of our
-                        equipment was lost. What we also lost was momentum. It took
-                        a lot of time to reinvigorate the band. The past is the past,
-                        fast forward to now. We’re excited to announce that the album
-                        will finally see the light of day somewhere in the coming months.
-                      </p>
-                      <p class="card-text">
-                        On a sad note, earlier this year Geert decided to leave the band.
-                        His decision was entirely personal. He was a founding member and
-                        his tour-of-bass-duty lasted a decade, but time and things change.
-                        We want to thank him for his friendship and dedication. Good luck
-                        with future endeavours!
-                      </p>
-                      <p class="card-text">
-                        We’re not without a bass player however, since Ronald van
-                        Wonderen and his 5-string recently joined us. Welcome, Ronald!
-                        We’re busy rehearsing all our material, including an album’s worth
-                        of new material we want to record as soon as possible. Check out
-                        our new website and stay tuned for more updates!
-                      </p>
-                    </div>
-                    <div class="card-footer text-muted">
-                      Posted on November 11, 2017 by
-                      <a href="#" class="text-dark">Fire Walk With Us</a>
+                      <div class="card-body">
+                        <p class="mb-3 card-text">
+                          It’s been a while since our last update, quite a while we might add. Late 2014 we recorded an album we were very excited about, but then disaster struck. Early 2015 our practice space burnt down and basically all of our equipment was lost. What we also lost was momentum. It took a lot of time to reinvigorate the band. The past is the past, fast forward to now. We’re excited to announce that the album will finally see the light of day somewhere in the coming months.
+                        </p>
+                        <!-- article expand -->
+                        <div class="mb-4 article-hide-1">
+                          <p class="card-text">
+                           On a sad note, earlier this year Geert decided to leave the band. His decision was entirely personal. He was a founding member and his tour-of-bass-duty lasted a decade, but time and things change. We want to thank him for his friendship and dedication. Good luck with future endeavours!
+                          </p>
+                          <p class="card-text">
+                            We’re not without a bass player however, since Ronald van Wonderen and his 5-string recently joined us. Welcome, Ronald! We’re busy rehearsing all our material, including an album’s worth of new material we want to record as soon as possible. Check out our new website and stay tuned for more updates!
+                          </p>
+                        </div>
+
+                      <!-- button article expand -->
+                      <div class="pb-3 text-right">
+                        <button id="expand-1" href="#" class="btn btn-outline-dark btn-sm">Read more</button>
+                      </div>
+                      <div class="card-footer text-muted">
+                       Posted on november 11, 2017 by
+                       <a href="#" class="text-dark">Fire Walk With Us</a>
+                      </div>
                     </div>
                   </div>
-                </div>
+
+                  <!-- article template -->
+                  <h5 class="mb-4">Post title
+                    <small>Subtitle</small>
+                  </h5>
+                  <div class="card mb-4">
+                    <img class="card-img-top" src="https://placeholdit.co//i/400x225" alt="Card image cap">
+                      <div class="card-body">
+                        <p class="mb-3 card-text">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam saepe possimus eum quae fugiat quam omnis quo totam ea placeat in, porro minima accusamus! Labore similique quis repellat veniam, porro.
+                        </p>
+                        <!-- article expand -->
+                        <div class="mb-4 article-hide-2">
+                          <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates mollitia, suscipit, porro reiciendis, itaque quaerat dicta ex totam ad consequuntur temporibus eligendi? Id blanditiis in minima aliquam eius inventore, natus, est earum iure corporis iusto!
+                          </p>
+                          <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut voluptatibus quisquam molestiae, minus porro quod voluptas est dolorem qui doloremque ad aspernatur corporis libero nesciunt.
+                          </p>
+                        </div>
+
+                      <!-- button article expand -->
+                      <div class="pb-3 text-right">
+                        <button id="expand-2" href="#" class="btn btn-outline-dark btn-sm">Read more</button>
+                      </div>
+                      <div class="card-footer text-muted">
+                       Posted on month day, year by
+                       <a href="#" class="text-dark">Fire Walk With Us</a>
+                      </div>
+                    </div>
+                  </div> <!-- article template -->
+
+              </div> <!-- news expand -->
 
                 <!-- button news section collapse -->
-                <div class="pt-4 text-center">
-                  <button href="#" class="expand btn btn-outline-dark btn-sm collapsed" data-toggle="collapse" data-target="#demo2"></button>
+                <div class="text-center">
+                  <button href="#" class="expand-news btn btn-outline-dark btn-sm collapsed" data-toggle="collapse" data-target="#demo2"></button>
                 </div>
 
               </div> <!-- news section -->
@@ -165,32 +192,32 @@
         <h5 class="pt-5 pb-3 mb-3 text-center text-dark">Discography:</h5>
         <div class="row">
           <div class="col-sm-6 col-md-3">
-            <div class="p-3 card card-1">
-              <a href="#"><img class="card-img-top image-responsive" src="/assets/fwwu-forestalbumcoverfb.jpg" alt="Card image"></a>
+            <div class="m-3 px-2 px-md-0 card">
+              <a href="#" data-toggle="tooltip" title="coming soon" data-placement="top"><img class="card-img-top image-responsive" src="/assets/fwwu-forestalbumcoverfb.jpg" alt="Card image"></a>
               <div class="card-body">
                 <p class="card-text">New Album (early 2018)</p>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-md-3">
-            <div class="p-3 card card-2">
-              <a href="#"><img class="card-img-top image-responsive" src="/assets/a4254543028_16.jpg" alt="Card image"></a>
+            <div class="m-3 px-2 px-md-0 card">
+              <a href="https://firewalkwithus.bandcamp.com/album/izah-fire-walk-with-us-split-ep" data-toggle="tooltip" title="listen on bandcamp" data-placement="top"><img class="card-img-top image-responsive" src="/assets/a4254543028_16.jpg" alt="Card image"></a>
               <div class="card-body">
                 <p class="card-text">Split EP with Izah (dec 2012)</p>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-md-3">
-            <div class="p-3 card card-3">
-              <a href="#"><img class="card-img-top image-responsive" src="/assets/a0552903286_16.jpg" alt="Card image"></a>
+            <div class="m-3 px-2 px-md-0 card">
+              <a href="https://firewalkwithus.bandcamp.com/album/carriers" data-toggle="tooltip" title="listen on bandcamp" data-placement="top"><img class="card-img-top image-responsive" src="/assets/a0552903286_16.jpg" alt="Card image"></a>
               <div class="card-body">
                 <p class="card-text">Carriers (oct 2011)</p>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-md-3">
-            <div class="p-3 card card-4">
-              <a href="#"><img class="card-img-top image-responsive" src="/assets/a1603743428_16.jpg" alt="Card image"></a>
+            <div class="m-3 px-2 px-md-0 card">
+              <a href="https://firewalkwithus.bandcamp.com/album/ep-1" data-toggle="tooltip" title="listen on bandcamp" data-placement="top"><img class="card-img-top image-responsive" src="/assets/a1603743428_16.jpg" alt="Card image"></a>
               <div class="card-body">
                 <p class="card-text">EP#1 (may 2008)</p>
               </div>
@@ -200,6 +227,7 @@
       </div>
 
       <!-- shows section -->
+
       <div id="live" class="container-fluid">
         <div class="mb-5 pb-4 container">
             <h5 class="py-5 mb-0 text-center text-white opacity-text">Live:</h5>
@@ -209,7 +237,7 @@
 
               <div class="col-sm-8 col-md-8 col-lg-6 shows">
                 <div class="shows-section">
-                  <h5 class="pt-5 pb-4 text-center text-white">Upcoming dates:</h5>
+                  <h5 class="py-5 text-center text-white">Upcoming dates:</h5>
                   <ul>
                     <li>
                       <p class="text-white">- No upcoming shows</p>
@@ -230,16 +258,16 @@
       <div id="contact" class="container-fluid bg-contact">
 
           <div class="row pt-4 pb-3">
-            <div class="col-md-6 text-center">
+            <div class="col-sm-6 text-center">
               <h5 class="pt-3 members-heading">Fire Walk With Us:</h5>
               <p class="members">Herman Wilken - guitar</p>
               <p class="members">Nico Nijland - guitar</p>
               <p class="members">Ronald van Wonderen - bass</p>
               <p class="members">Ralph van Reijendam - drums</p>
             </div>
-            <div class="col-md-6 text-center">
+            <div class="col-sm-6 text-center">
               <h5 class="pt-3 members-heading">Contact us:</h5>
-              <p class="members">For bookings, press and all matters FWWU:</p>
+              <p class="members">For bookings, press and all <br> matters FWWU:</p>
               <p><a class="text-muted" href="mailto:info@firewalkwithus.com.com?Subject=Hello%20again" target="_top">info@firewalkwithus.com</a></p>
 
               <!-- contact nav -->
