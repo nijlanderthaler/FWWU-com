@@ -1,9 +1,0 @@
-/*@mixin buttonText {
-  button.expand-news.collapsed::before {
-    content: 'More news';
-  }
-
-  button.expand-news::before {
-    content: 'Minimize news';
-  }
-}*/

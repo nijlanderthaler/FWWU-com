@@ -83,7 +83,7 @@ if(hideDelay){
    setTimeout(function(){
         $("#myModal").modal("hide");
         $(".modal-content").removeClass("animated zoomOut").addClass("animated zoomIn");
-      }, 300);
+      }, 200);
       return false;
   }
   hideDelay = true;
