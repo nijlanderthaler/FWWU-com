@@ -48,18 +48,18 @@ $("#toggle-jumbo-text").click(function(){
 // toggle article content
 // needs work, needs to be reworked to one click event controlling multiple buttons seperately
 $("#expand-1").click(function(){
-  $(".article-hide-1").toggle();
+  $(".article-hide-1").slideToggle(400);
   $(this).text(function(i, text) {
     return text === "Close" ? "Read more" : "Close";
   });
 });
 
-$("#expand-2").click(function(){
-  $(".article-hide-2").toggle();
+/*$("#expand-?").click(function(){
+  $(".article-hide-2").slideToggle(400);
   $(this).text(function(i, text) {
     return text === "Close" ? "Read more" : "Close";
   });
-});
+});*/
 
 // fitvids.js
 $(document).ready(function(){

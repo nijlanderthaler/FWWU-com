@@ -5,6 +5,7 @@
 $body-bg: #000;
 $font-family-monospace: "Courier New", Courier, monospace;
 $font-size-base: 0.9rem;
+$transition-collapse: height 0.5s ease;
 
 $spacer: 1rem;
 $spacers: ();
@@ -19,6 +20,15 @@ $spacers: map-merge((
   7: ($spacer * 8) // additional spacing option
 ), $spacers);
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  cs: 875px, // custom breakpoint
+  lg: 992px,
+  xl: 1200px
+);
+
 // Bootstrap Sass files
 @import "node_modules/bootstrap/scss/bootstrap";
 // includes everything, for custom adjustments: see documentation
@@ -26,5 +36,4 @@ $spacers: map-merge((
 // Custom variables
 
 $alt-bg: #fff;
-$font-size-p-lg: 0.95rem;
-$font-size-p-md: 0.85rem;
+$font-size-p-alt: 0.85rem;

@@ -1,22 +1,34 @@
 <!DOCTYPE html>
-<!-- don't forget to only use the bootstrap components that are actually necessary -->
 <html lang="en">
     <head>
+        <title>firewalkwithus.com</title>
         <meta charset="UTF-8">
-        <title>FWWU-com</title>
+        <meta property="og:title" content="Fire Walk With Us">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="http://firewalkwithus.com/src/assets/fwwu-cover.jpg" />
+        <meta property="og:description" content="Amsterdam-based postmetallurgists, forging heavy and expansive tones from strings, sticks, skins, picks, pedals, amps and beer.">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /> <!-- iPhone X meta -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /> <!-- =cover iPhone X meta -->
 
         <link rel="shortcut icon" href="#"> <!-- remove, fails to load icon, investigate later -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/outdatedbrowser/outdatedbrowser.min.css">
         <link rel="stylesheet" href="/css/bootstrap.css">
         <link rel="stylesheet" href="/css/styles.css">
     </head>
 
     <body id="home">
+        <!-- outdatedbrowser, targets IE9 and less -->
+        <div id="outdated">
+          <h6>Your browser is out-of-date!</h6>
+          <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+          <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+        </div>
         <!-- navigation fixed top animated nav scroll-->
-        <nav class="navbar header-fixed navbar-expand-md navbar-dark fixed-top">
+        <nav class="navbar header-fixed navbar-expand-cs navbar-dark fixed-top"><!-- custom breakpoint -->
           <a class="navbar-brand" href="#">
             <h1 class="logo">Fire Walk <br> With Us</h1>
           </a>
@@ -52,9 +64,9 @@
           <div class="container jumbo-text text-white">
             <div class="disappear">
               <h3 class="text-center opacity-text">New Album</h3>
-              <p class="text-center opacity-text">Coming soon
+              <p class="text-center opacity-text">
                 <!-- modal trigger button -->
-                <button id="hide" type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#myModal" data-backdrop="static">»</button>
+                <button id="hide" type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#myModal" data-backdrop="static"><span>Coming soon »</span></button>
               </p>
             </div>
 
@@ -86,104 +98,63 @@
 
       <!-- news section -->
 
-      <div id="news" class="container-fluid news-gradient text-dark">
+      <div id="news" class="container-fluid text-dark">
         <div class="row">
 
-          <div class="col-sm-2 col-md-2 col-lg-3"></div>
+          <div class="col-sm-1 col-md-2 col-lg-3"></div>
 
-          <div class="col-sm-8 col-md-8 col-lg-6">
+          <div class="col-sm-10 col-md-8 col-lg-6">
             <h5 class="py-5 mb-0 text-center text-light">News:</h5>
               <div class="mb-6 p-3 p-md-4 news-section">
 
                 <!-- news fixed -->
-                <h5 class="mb-4">Album teaser released
-                  <small>Listen now</small>
+
+                <h5 class="mb-4 mt-2">We've got news for you!
+                  <small>Yes, we awoke from hibernation</small>
                 </h5>
-                <div id="video" class="card mb-4">
-                  <iframe width="400" height="225" src="https://www.youtube.com/embed/B9xpamjFnMA" frameborder="0" allowfullscreen alt="Card video YouTube"></iframe>
-                  <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                  </div>
-                  <div class="card-footer text-muted">
-                    Posted on January 29, 2018 by
-                    <a href="#" class="text-dark">Fire Walk With Us</a>
+                <div class="card mb-4">
+                  <img class="card-img-top" src="/assets/fwwu-news.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <p class="mb-3 card-text">
+                        It’s been a while since our last update, quite a while we might add. Late 2014 we recorded an album we were very excited about, but then disaster struck. Early 2015 our practice space burnt down and basically all of our equipment was lost. What we also lost was momentum. It took a lot of time to reinvigorate the band. The past is the past, fast forward to now. We’re excited to announce that the album will finally see the light of day somewhere in the coming months.
+                      </p>
+
+                      <!-- article expand -->
+                      <div class="mb-4 article-hide-1">
+                        <p class="card-text">
+                         On a sad note, earlier this year Geert decided to leave the band. His decision was entirely personal. He was a founding member and his tour-of-bass-duty lasted a decade, but time and things change. We want to thank him for his friendship and dedication. Good luck with future endeavours!
+                        </p>
+                        <p class="card-text">
+                          We’re not without a bass player however, since Ronald van Wonderen and his 5-string recently joined us. Welcome, Ronald! We’re busy rehearsing all our material, including an album’s worth of new material we want to record as soon as possible. Check out our new website and stay tuned for more updates!
+                        </p>
+                      </div>
+
+                    <!-- button article expand -->
+                    <div class="pb-3 text-right">
+                      <button id="expand-1" href="#" class="btn btn-outline-dark btn-sm">Read more</button>
+                    </div>
+                    <div class="card-footer text-muted">
+                     Posted on november 11, 2017 by
+                     <a href="#" class="text-dark">Fire Walk With Us</a>
+                    </div>
                   </div>
                 </div>
 
                 <!-- news expand -->
                 <div id="demo2" class="pt-4 collapse">
 
-                  <h5 class="mb-4">Breaking news!
-                    <small>New record on the way/new bass player</small>
-                  </h5>
-                  <div class="card mb-4">
-                    <img class="card-img-top" src="/assets/studio.jpg" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="mb-3 card-text">
-                          It’s been a while since our last update, quite a while we might add. Late 2014 we recorded an album we were very excited about, but then disaster struck. Early 2015 our practice space burnt down and basically all of our equipment was lost. What we also lost was momentum. It took a lot of time to reinvigorate the band. The past is the past, fast forward to now. We’re excited to announce that the album will finally see the light of day somewhere in the coming months.
-                        </p>
-                        <!-- article expand -->
-                        <div class="mb-4 article-hide-1">
-                          <p class="card-text">
-                           On a sad note, earlier this year Geert decided to leave the band. His decision was entirely personal. He was a founding member and his tour-of-bass-duty lasted a decade, but time and things change. We want to thank him for his friendship and dedication. Good luck with future endeavours!
-                          </p>
-                          <p class="card-text">
-                            We’re not without a bass player however, since Ronald van Wonderen and his 5-string recently joined us. Welcome, Ronald! We’re busy rehearsing all our material, including an album’s worth of new material we want to record as soon as possible. Check out our new website and stay tuned for more updates!
-                          </p>
-                        </div>
+                  <!-- insert article template here -->
 
-                      <!-- button article expand -->
-                      <div class="pb-3 text-right">
-                        <button id="expand-1" href="#" class="btn btn-outline-dark btn-sm">Read more</button>
-                      </div>
-                      <div class="card-footer text-muted">
-                       Posted on november 11, 2017 by
-                       <a href="#" class="text-dark">Fire Walk With Us</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- article template -->
-                  <h5 class="mb-4">Post title
-                    <small>Subtitle</small>
-                  </h5>
-                  <div class="card mb-4">
-                    <img class="card-img-top" src="https://placeholdit.co//i/400x225" alt="Card image cap">
-                      <div class="card-body">
-                        <p class="mb-3 card-text">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam saepe possimus eum quae fugiat quam omnis quo totam ea placeat in, porro minima accusamus! Labore similique quis repellat veniam, porro.
-                        </p>
-                        <!-- article expand -->
-                        <div class="mb-4 article-hide-2">
-                          <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates mollitia, suscipit, porro reiciendis, itaque quaerat dicta ex totam ad consequuntur temporibus eligendi? Id blanditiis in minima aliquam eius inventore, natus, est earum iure corporis iusto!
-                          </p>
-                          <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut voluptatibus quisquam molestiae, minus porro quod voluptas est dolorem qui doloremque ad aspernatur corporis libero nesciunt.
-                          </p>
-                        </div>
-
-                      <!-- button article expand -->
-                      <div class="pb-3 text-right">
-                        <button id="expand-2" href="#" class="btn btn-outline-dark btn-sm">Read more</button>
-                      </div>
-                      <div class="card-footer text-muted">
-                       Posted on month day, year by
-                       <a href="#" class="text-dark">Fire Walk With Us</a>
-                      </div>
-                    </div>
-                  </div> <!-- article template -->
-
-              </div> <!-- news expand -->
+                </div> <!-- news expand -->
 
                 <!-- button news section collapse -->
-                <div class="text-center">
+                <!--<div class="text-center">
                   <button href="#" class="expand-news btn btn-outline-dark btn-sm collapsed" data-toggle="collapse" data-target="#demo2"></button>
-                </div>
+              </div>-->
 
               </div> <!-- news section -->
             </div> <!-- news section container -->
-          <div class="col-sm-2 col-md-2 col-lg-3"></div>
+          <div class="col-sm-1 col-md-2 col-lg-3"></div>
         </div> <!-- news row -->
       </div> <!-- news container -->
 
@@ -192,7 +163,7 @@
       <div id="disco" class="container-fluid bg-discography">
         <h5 class="pt-5 pb-3 mb-3 text-center text-dark">Discography:</h5>
         <div class="row">
-          <div class="col-sm-6 col-md-3">
+          <div class="col-sm-6 col-cs-3">
             <div class="m-3 px-2 px-md-0 card">
               <a href="#" data-toggle="tooltip" title="coming soon" data-placement="top"><img class="card-img-top image-responsive" src="/assets/fwwu-forestalbumcoverfb.jpg" alt="Card image"></a>
               <div class="card-body">
@@ -200,7 +171,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-3">
+          <div class="col-sm-6 col-cs-3">
             <div class="m-3 px-2 px-md-0 card">
               <a href="https://firewalkwithus.bandcamp.com/album/izah-fire-walk-with-us-split-ep" data-toggle="tooltip" title="listen on bandcamp" data-placement="top"><img class="card-img-top image-responsive" src="/assets/a4254543028_16.jpg" alt="Card image"></a>
               <div class="card-body">
@@ -208,7 +179,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-3">
+          <div class="col-sm-6 col-cs-3">
             <div class="m-3 px-2 px-md-0 card">
               <a href="https://firewalkwithus.bandcamp.com/album/carriers" data-toggle="tooltip" title="listen on bandcamp" data-placement="top"><img class="card-img-top image-responsive" src="/assets/a0552903286_16.jpg" alt="Card image"></a>
               <div class="card-body">
@@ -216,7 +187,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-3">
+          <div class="col-sm-6 col-cs-3">
             <div class="m-3 px-2 px-md-0 card">
               <a href="https://firewalkwithus.bandcamp.com/album/ep-1" data-toggle="tooltip" title="listen on bandcamp" data-placement="top"><img class="card-img-top image-responsive" src="/assets/a1603743428_16.jpg" alt="Card image"></a>
               <div class="card-body">
@@ -234,9 +205,9 @@
             <h5 class="py-5 mb-0 text-center text-white opacity-text">Live:</h5>
             <div class="row">
 
-              <div class="col-sm-2 col-md-2 col-lg-3"></div>
+              <div class="col-sm-1 col-md-2 col-lg-3"></div>
 
-              <div class="col-sm-8 col-md-8 col-lg-6 shows">
+              <div class="col-sm-10 col-md-8 col-lg-6 shows">
                 <div class="shows-section">
                   <h5 class="py-5 text-center text-white">Upcoming dates:</h5>
                   <ul>
@@ -248,7 +219,7 @@
                 </div>
               </div>
 
-              <div class="col-sm-2 col-md-2 col-lg-3"></div>
+              <div class="col-sm-1 col-md-2 col-lg-3"></div>
 
             </div>
         </div>
@@ -260,14 +231,14 @@
 
           <div class="row pt-4 pb-3">
             <div class="col-sm-6 text-center">
-              <h5 class="pt-3 members-heading">Fire Walk With Us:</h5>
+              <h5 class="pt-3 pb-2 members-heading">Fire Walk With Us:</h5>
               <p class="members">Herman Wilken - guitar</p>
               <p class="members">Nico Nijland - guitar</p>
               <p class="members">Ronald van Wonderen - bass</p>
               <p class="members">Ralph van Reijendam - drums</p>
             </div>
             <div class="col-sm-6 text-center">
-              <h5 class="pt-3 members-heading">Contact us:</h5>
+              <h5 class="pt-3 pb-2 members-heading">Contact us:</h5>
               <p class="members">For bookings, press and all <br> matters FWWU:</p>
               <p><a class="text-muted" href="mailto:info@firewalkwithus.com.com?Subject=Hello" target="_top">info@firewalkwithus.com</a></p>
 
@@ -302,7 +273,31 @@
           </span>
 
         </nav>
-
+        <script src="/outdatedbrowser/outdatedbrowser.min.js"></script>
+        <script>
+            //event listener: DOM ready
+            function addLoadEvent(func) {
+                var oldonload = window.onload;
+                if (typeof window.onload != 'function') {
+                    window.onload = func;
+                } else {
+                window.onload = function() {
+                    if (oldonload) {
+                        oldonload();
+                    }
+                    func();
+                    }
+                }
+            }
+            //call plugin function after DOM ready
+            addLoadEvent(function(){
+                outdatedBrowser({
+                    bgColor: '#555',
+                    color: '#ffffff',
+                    lowerThan: 'transform'
+                })
+            });
+        </script>
         <script src="/js/jquery.min.js"></script>
         <script src="/js/popper.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
