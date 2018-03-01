@@ -17,7 +17,6 @@ html {
     @include mQ(768px) {
       opacity: 0.9;
     }
-    text-shadow: 1px 0 4px rgba(150, 150, 150, 0.5);
   }
 
   .opacity-text {
@@ -36,7 +35,11 @@ html {
   transition: all 0.8s ease;
 
   .nav-link {
+    font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.7) !important;
+    @include mQ(768px) {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
   }
 
   .nav-link.active {
@@ -73,7 +76,7 @@ html {
 .logo {
   margin-bottom: 0;
   @include mQ(4000px, 1300px) {
-    font-size: 3.3rem;
+    font-size: 2.6rem;
   }
   @include mQ(992px) {
     font-size: 2.4rem;
@@ -96,12 +99,18 @@ html {
   border-color: transparent !important;
 }
 
+.custom-toggler:focus, .custom-toggler:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 // Jumbotron styles
 
 .jumbotron {
   @include heroImages;
   background-image: url("../assets/fwwu-forest2.jpg");
   height: 100vh;
+  background-color: $body-bg;
   margin-bottom: 0;
   @include mQPortrait(768px) {
     background-image: url("../assets/fwwu-forestalbumcover2.jpg");
@@ -142,18 +151,19 @@ html {
     }
   }
 
-  p {
+  span {
+    font-size: $font-size-p-alt;
     @include mQ(320px) {
-      font-size: $font-size-p-alt;
+      font-size: 0.85rem;
     }
   }
 
-  span {
-    font-size: 0.85rem;
+  .btn {
+    border-width: 2px;
   }
 
   .btn-outline-light {
-    border-color: rgba(248, 249, 250, 0.4);
+    border-color: rgba(248, 249, 250, 0.5);
   }
 
   #hide {
@@ -174,8 +184,9 @@ html {
   }
 
   .close span {
-    text-shadow: none;
+    //text-shadow: none;
     font-size: 1.8rem;
+    font-weight: 400;
   }
 }
 
@@ -186,12 +197,6 @@ html {
 
   .card-body {
     padding: 1.25rem 0;
-  }
-
-  .expand-news,
-  #expand-1,
-  #expand-2 {
-    text-shadow: 1px 0 4px rgba(150, 150, 150, 0.5);
   }
 
   .article-hide-1,
@@ -233,6 +238,10 @@ button.expand-news::before {
     border-top-right-radius: 0;
   }
 
+  * {
+     min-height: 0.01px;
+  } // solves IE10/11 card-body img height issues
+
   p {
     @include mQLandscape(768px) {
       font-size: $font-size-p-alt;
@@ -258,7 +267,7 @@ button.expand-news::before {
   width: 100%;
   height: 700px;
   background-color: rgba(0, 0, 0, 0.8);
-  overflow-y: scroll;
+  //overflow-y: scroll; enable when necessary
 }
 
 // Contact section

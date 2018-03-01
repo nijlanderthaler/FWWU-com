@@ -3,8 +3,9 @@
 // Bootstrap variable overrides
 
 $body-bg: #000;
-$font-family-monospace: "Courier New", Courier, monospace;
+$font-family-monospace: "Courier New", Courier, "Lucinda Sans Typewriter", "Lucinda Typewriter", monospace;
 $font-size-base: 0.9rem;
+$font-weight-normal: 500;
 $transition-collapse: height 0.5s ease;
 
 $spacer: 1rem;
@@ -36,4 +37,4 @@ $grid-breakpoints: (
 // Custom variables
 
 $alt-bg: #fff;
-$font-size-p-alt: 0.85rem;
+$font-size-p-alt: 0.9rem;
