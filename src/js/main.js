@@ -17,7 +17,6 @@ $(document).ready(function() {
   });
 
   // scrollspy smooth scrolling
-
   $("body").scrollspy({target: ".navbar", offset: 75});
   $("#collapsibleNavbar a").on('click', function(event) {
     if (this.hash !== "") {
@@ -47,26 +46,23 @@ $(document).ready(function() {
   });
 
   // toggle article content
-  // needs work, needs to be reworked to one click event controlling multiple buttons
-  // seperately --> event.currentTarget/siblings()/
-  $("#expand-1").click(function(){
-    $(".article-hide-1").slideToggle(400);
+  $(".expand").click(function( event ){
+    $(event.currentTarget).parent().prev().slideToggle(400);
     $(this).text(function(i, text) {
       return text === "Close" ? "Read more" : "Close";
     });
   });
 
-  /*$("#expand-?").click(function(){
-    $(".article-hide-2").slideToggle(400);
+  // back-up solution in case above code breaks
+  /*$("#expand-1").click(function(){
+    $(".article-hide-1").slideToggle(400);
     $(this).text(function(i, text) {
       return text === "Close" ? "Read more" : "Close";
     });
   });*/
 
   // fitvids.js
-  $(document).ready(function(){
-    $("#video").fitVids();
-  });
+  $("#video").fitVids();
 
   // enable tooltips
   $('[data-toggle="tooltip"]').tooltip();

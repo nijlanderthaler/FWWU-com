@@ -196,11 +196,10 @@ html {
   background: $alt-bg;
 
   .card-body {
-    padding: 1.25rem 0;
+    padding: 1.25rem 0 0;
   }
 
-  .article-hide-1,
-  .article-hide-2 {
+  .article-hide {
     display: none;
   }
 

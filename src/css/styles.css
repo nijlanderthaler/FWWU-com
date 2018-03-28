@@ -6972,9 +6972,8 @@ html {
 .news-section {
   background: #fff; }
   .news-section .card-body {
-    padding: 1.25rem 0; }
-  .news-section .article-hide-1,
-  .news-section .article-hide-2 {
+    padding: 1.25rem 0 0; }
+  .news-section .article-hide {
     display: none; }
   .news-section .btn {
     font-size: 0.75rem; }
